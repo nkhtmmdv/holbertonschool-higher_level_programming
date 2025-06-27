@@ -18,6 +18,7 @@ Example usage:
 [3, 1, 2]
 """
 
+
 class MyList(list):
     """MyList class that inherits from list."""
 
