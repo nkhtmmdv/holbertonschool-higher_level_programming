@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """
-This module defines MyList class.
+Module 1-my_list
 
-Example:
+Defines class MyList that inherits from list.
+
+Example usage:
+
 >>> my_list = MyList()
 >>> my_list.append(3)
 >>> my_list.append(1)
@@ -19,5 +22,10 @@ class MyList(list):
     """MyList class that inherits from list."""
 
     def print_sorted(self):
-        """Prints the list sorted in ascending order."""
+        """Print the list sorted in ascending order."""
         print(sorted(self))
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

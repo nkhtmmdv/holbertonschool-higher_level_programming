@@ -1,1 +1,4 @@
-# Empty file or no doctests here due to module name restriction.
+>>> from 1-my_list import MyList
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
