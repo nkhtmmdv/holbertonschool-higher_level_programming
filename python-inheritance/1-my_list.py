@@ -2,7 +2,7 @@
 ''' 1 '''
 
 
-class Mylist(list):
+class MyList(list):
     ''' 1 '''
     def print_sorted(self):
         print(sorted(self))
