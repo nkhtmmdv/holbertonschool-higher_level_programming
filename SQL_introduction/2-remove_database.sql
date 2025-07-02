@@ -1,2 +1,2 @@
---2 
-DROP DATABASE IF hbtn_0c_0 EXISTS;
+-- 2
+DROP DATABASE IF EXISTS hbtn_0c_0; 
