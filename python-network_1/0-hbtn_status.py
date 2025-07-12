@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 ''' 0 '''
+
+
 import urllib.request
 
 url = 'https://intranet.hbtn.io/status'
