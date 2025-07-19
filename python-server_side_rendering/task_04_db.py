@@ -64,13 +64,15 @@ def display_products():
     if not products:
         return render_template('product_display.html', products=None, error="Failed to load data")
 
-    # Фильтрация по id, если параметр передан
     if id_str:
         try:
             product_id = int(id_str)
             products = [p for p in products if p['id'] == product_id]
         except ValueError:
             products = []
+
+        if not products:
+            return render_template('product_display.html', products=None, error="Product not found")
 
     return render_template('product_display.html', products=products, error=None)
 
