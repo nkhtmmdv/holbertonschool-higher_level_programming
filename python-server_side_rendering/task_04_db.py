@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-# task_04_db.py
-
 from flask import Flask, render_template, request
 import json
 import csv
@@ -52,6 +50,8 @@ def load_from_sqlite(db_path='products.db'):
 @app.route('/products')
 def display_products():
     source = request.args.get('source', 'json')
+    id_str = request.args.get('id', None)
+
     if source == 'json':
         products = load_from_json()
     elif source == 'csv':
@@ -63,6 +63,14 @@ def display_products():
 
     if not products:
         return render_template('product_display.html', products=None, error="Failed to load data")
+
+    # Фильтрация по id, если параметр передан
+    if id_str:
+        try:
+            product_id = int(id_str)
+            products = [p for p in products if p['id'] == product_id]
+        except ValueError:
+            products = []
 
     return render_template('product_display.html', products=products, error=None)
 
